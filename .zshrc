@@ -8,9 +8,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-POWERLEVEL9K_MODE="nerdfont-complete"
+#POWERLEVEL9K_MODE="nerdfont-complete"
 
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="white"
@@ -146,8 +146,6 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 git
-zsh-syntax-highlighting
-zsh-autosuggestions
 helm
 kubectl
 )
@@ -182,11 +180,23 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 autoload -U compinit; compinit
 eval "$(jenv init -)"
-source <(awless completion zsh)
+eval "$(jump shell zsh)"
 source <(kops completion zsh)
+
+export VAULT_ADDR=https://secrets.elastic.co:8200
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/daveyakushimiso/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/daveyakushimiso/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/daveyakushimiso/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/daveyakushimiso/google-cloud-sdk/completion.zsh.inc'; fi
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/vault vault

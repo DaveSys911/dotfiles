@@ -34,6 +34,8 @@ alias docs="lara && cd docs/"
 # alias stash="git stash -u"
 # alias unstage="git restore --staged ."
 # alias wip="commit wip"
+alias ghb="gh browse"
+
 
 # k8s
 alias k="kubectl"
@@ -44,8 +46,8 @@ alias kd='kubectl describe'
 alias kg='kubectl get'
 
 # aws
-alias aws-dev-console='aws-vault login david-dev --region eu-west-1'
+alias aws-dev-console='aws-vault login david-bsec-temp --region eu-west-1'
 alias aws-prod-console='aws-vault login david-prod --region eu-central-1'
 alias aws-billing-console='aws-vault login david-billing --region eu-central-1'
-alias aws-dev-cli='aws-vault exec david-dev  -- aws-shell'
+alias aws-dev-cli='aws-vault exec david-bsec-temp  -- aws-shell'
 alias aws-prod-cli='aws-vault exec david-prod  -- aws-shell'

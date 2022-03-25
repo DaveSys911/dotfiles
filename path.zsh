@@ -1,7 +1,7 @@
 # Load dotfiles binaries
 export PATH="$DOTFILES/bin:$PATH"
 
-PATH=/usr/local/opt/terraform@0.13/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/daveyakushimiso/.fzf/bin
+# PATH= /Users/daveops/.jenv/shims:/Users/daveops/.jenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/daveops/.fzf/bin
 export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
 export PATH="/usr/local/opt/openjdk@15/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
