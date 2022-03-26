@@ -1,0 +1,4 @@
+[[snippets]]
+  description = "test"
+  command = "echo 'Pet last time deletes'"
+  output = ""
